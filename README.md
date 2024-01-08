@@ -4,4 +4,4 @@ Simple juego al estilo *Pong!* con Arduino, LEDs y pulsadores. Se puede construi
 
 En [Tinkercad](https://www.tinkercad.com/things/hl14mxpcupM-arduino-led-pong) hay disponible un circuito de simulación publico.
 
-![Circuito](Arduino LED Pong!.png)
+![Circuito](https://github.com/lmtreser/LED-Pong/blob/main/Arduino%20LED%20Pong!.png)

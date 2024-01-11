@@ -1,4 +1,22 @@
+/*
+ *  LED Pong: a Fun Electronics Project
+ *  by @newsonator
+ *  https://www.instructables.com/Arduino-LED-Pong-Game-a-Fun-Electronics-Project/
+ *
+ *  In this project we will be making LED PONG using Arduino, this is a two player 
+ *  game where each player must push their button before the ball (LED) reaches the 
+ *  red led. If the player waits until the yellow led and pushes the hit button it 
+ *  will shot the ball extra fast so watch out!!! After each bounce the speed of the 
+ *  ball increases until it's a battle to the DEATH!!
+*/
+
 void (*resetFunc)(void) = 0;
+
+const int button1 = 3;  // the number of the pushbutton pin
+const int button2 = 4;  // the number of the pushbutton pin
+
+int startDir[] = { -1, 1 };
+int LED[] = { 13, 12, 11, 10, 9, 8, 7, 6, 5 };
 
 unsigned long previousMillis = 0UL;
 unsigned long interval = 500UL;
@@ -8,18 +26,13 @@ int score2 = 0;
 int soundA = 800;
 int soundB = 1000;
 int bounce = 0;
-//494
-
-int startDir[] = { -1, 1 };
-int LED[] = { 13, 12, 11, 10, 9, 8, 7, 6, 5 };
-const int button1 = 3;  // the number of the pushbutton pin
-const int button2 = 4;  // the number of the pushbutton pin
 int dir = 1;
 int pos = 4;
 int A = 0;
 int B = 0;
-// the setup function runs once when you press reset or power the board
+
 void setup() {
+
   Serial.begin(9600);
   // initialize digital pin LED_BUILTIN as an output.
   for (int i = 0; i <= 8; i = i + dir) {
@@ -32,21 +45,18 @@ void setup() {
   if (dir == 0) dir = 1;
 }
 
-// the loop function runs over and over again forever
 void loop() {
-
 
   unsigned long currentMillis = millis();
   int buttonState = digitalRead(button1);
   int buttonState2 = digitalRead(button2);
+
   Serial.print(buttonState);
   Serial.print(",");
   Serial.print(buttonState2);
   Serial.print(",");
   Serial.print(dir);
   Serial.print(",");
-
-
   Serial.print(pos);
   Serial.print(",");
   Serial.print(score1);
@@ -54,7 +64,6 @@ void loop() {
   Serial.print(score2);
   Serial.print(",");
   Serial.println(interval);
-
 
   //change direction when pushed blue button
   if (buttonState == 0 and pos > 4 and A == 1) {
@@ -66,8 +75,6 @@ void loop() {
       interval = storeInterval;
       bounce = 0;
     }
-
-
 
     if (interval > 40) interval = interval - 5;
 
@@ -98,16 +105,9 @@ void loop() {
     }
   }
 
-
-
-
-
   //reset the push button
   if (buttonState == 1) A = 1;
   if (buttonState2 == 1) B = 1;
-
-
-
 
   if (currentMillis - previousMillis > interval) {
 
@@ -116,21 +116,16 @@ void loop() {
     buttonState = digitalRead(button1);
     buttonState2 = digitalRead(button2);
 
-
-    /* The Arduino executes this code once every second
- 	*  (interval = 1000 (ms) = 1 second).
- 	*/
-
+    // The Arduino executes this code once every second
+    // (interval = 1000 (ms) = 1 second).
     // Don't forget to update the previousMillis value
     digitalWrite(LED[pos], LOW);
 
-
     if (pos > -1 and pos < 9) pos = pos + dir;
 
-    if (pos == 0)  //score
-    {
-      interval = storeInterval;
+    if (pos == 0) {  //score
 
+      interval = storeInterval;
 
       // flash the led for the goal
       for (int i = 0; i <= 5; i++) {
@@ -143,12 +138,7 @@ void loop() {
         tone(2, soundA, 50);
       }
 
-
-
-
-
       // show the score
-
       for (int i = 8; i >= 8 - score2; i--) {
         digitalWrite(LED[i], HIGH);
         delay(50);
@@ -161,7 +151,6 @@ void loop() {
         delay(50);
       }
 
-
       // show the led will come again
       digitalWrite(LED[pos], HIGH);
       delay(1000);
@@ -171,9 +160,8 @@ void loop() {
     }
 
     if (pos == 8) {
+
       interval = storeInterval;  //reset the speed after a fast bounce
-
-
 
       // flash the score for player 1
       for (int i = 0; i <= 5; i++) {
@@ -185,7 +173,6 @@ void loop() {
         delay(50);
         tone(2, soundB, 50);
       }
-
 
       //show the score
       for (int i = 0; i <= score1; i++) {
@@ -205,7 +192,6 @@ void loop() {
       dir = -1;
       score1 = score1 + 1;
     }
-
 
     //end of game reached 9 points
     if (score1 == 9 or score2 == 9) {
@@ -227,25 +213,15 @@ void loop() {
           delay(100);
         }
 
-
-
         tone(2, 800, 100);
-
         tone(2, 900, 100);
-
         delay(200);
         noTone(2);
       }
 
-
-
-
-
       resetFunc();
     }
     digitalWrite(LED[pos], HIGH);
-
-
     previousMillis = currentMillis;
   }
 }

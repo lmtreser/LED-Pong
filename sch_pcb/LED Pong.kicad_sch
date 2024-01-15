@@ -1266,7 +1266,7 @@
     (property "Value" "Arduino UNO" (at 134.62 67.31 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Module:Arduino_UNO_R3" (at 144.78 96.52 0)
+    (property "Footprint" "libs:Arduino_UNO_R3_OVAL" (at 144.78 96.52 0)
       (effects (font (size 1.27 1.27) italic) hide)
     )
     (property "Datasheet" "https://www.arduino.cc/en/Main/arduinoBoardUno" (at 144.78 96.52 0)

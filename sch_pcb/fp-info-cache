@@ -1,4 +1,4 @@
-22453399103354740
+22472157680401211
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -91706,6 +91706,76 @@ igbt diode module
 0
 25
 25
+Treser
+Arduino_UNO_R3_OVAL
+Arduino UNO R3, http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf
+Arduino UNO R3
+0
+32
+32
+Treser
+PinHeader_1x02_P2.54mm_Vertical
+Through hole straight pin header, 1x02, 2.54mm pitch, single row
+Through hole pin header THT 1x02 2.54mm single row
+0
+2
+2
+Treser
+PinHeader_1x03_P2.54mm_Vertical
+Through hole straight pin header, 1x03, 2.54mm pitch, single row
+Through hole pin header THT 1x03 2.54mm single row
+0
+3
+3
+Treser
+PinHeader_1x04_P2.54mm_Vertical
+Through hole straight pin header, 1x04, 2.54mm pitch, single row
+Through hole pin header THT 1x04 2.54mm single row
+0
+4
+4
+Treser
+PinHeader_1x05_P2.54mm_Vertical
+Through hole straight pin header, 1x05, 2.54mm pitch, single row
+Through hole pin header THT 1x05 2.54mm single row
+0
+5
+5
+Treser
+PinHeader_1x06_P2.54mm_Vertical
+Through hole straight pin header, 1x06, 2.54mm pitch, single row
+Through hole pin header THT 1x06 2.54mm single row
+0
+6
+6
+Treser
+PinHeader_1x07_P2.54mm_Vertical
+Through hole straight pin header, 1x07, 2.54mm pitch, single row
+Through hole pin header THT 1x07 2.54mm single row
+0
+7
+7
+Treser
+PinHeader_1x08_P2.54mm_Vertical
+Through hole straight pin header, 1x08, 2.54mm pitch, single row
+Through hole pin header THT 1x08 2.54mm single row
+0
+8
+8
+Treser
+PinHeader_1x09_P2.54mm_Vertical
+Through hole straight pin header, 1x09, 2.54mm pitch, single row
+Through hole pin header THT 1x09 2.54mm single row
+0
+9
+9
+Treser
+PinHeader_1x10_P2.54mm_Vertical
+Through hole straight pin header, 1x10, 2.54mm pitch, single row
+Through hole pin header THT 1x10 2.54mm single row
+0
+10
+10
 Valve
 Valve_ECC-83-1
 Valve ECC-83-1 round pins
@@ -92483,3 +92553,10 @@ varistor
 0
 2
 2
+libs
+Arduino_UNO_R3_OVAL
+Arduino UNO R3, http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf
+Arduino UNO R3
+0
+32
+32
